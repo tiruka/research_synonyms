@@ -1,4 +1,5 @@
 # research_synonyms
+
 Researching synonyms using natural language processing (NLP)
 
 Creating corpas based on Wikipedia Data ans utlizing Word2Vec to predict new synonyms.
@@ -45,3 +46,11 @@ bunzip2 jawiki-latest-pages-articles.xml.bz2
 ```.sh
 wp2txt --input-file jawiki-latest-pages-articles.xml
 ```
+
+8. Concatenate all jawiki-latest-pages-articles-*.txt into one file and make wakachi file(txt).
+
+```.sh
+cat jawiki-latest-pages-articles-*.txt >> all_jawiki-latest-pages-articles.txt
+mecab -b 100000 -O wakati all_jawiki-latest-pages-articles.txt -o jawiki_wakachi.txt
+```
+
