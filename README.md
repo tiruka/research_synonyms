@@ -54,3 +54,10 @@ cat jawiki-latest-pages-articles-*.txt >> all_jawiki-latest-pages-articles.txt
 mecab -b 100000 -O wakati all_jawiki-latest-pages-articles.txt -o jawiki_wakachi.txt
 ```
 
+9. Train and save the wrod2vec model by running the below command.
+
+```.sh
+python train.py
+```
+
+10. You can predict and fetch similar words by `python predict.py`.
