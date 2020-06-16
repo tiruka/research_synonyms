@@ -1,18 +1,20 @@
+import argparse
+
 from gensim.models import word2vec
+
+parser = argparse.ArgumentParser()
+parser.add_argument('-p', '--positive', type=str, nargs='*', help='positive words')
+parser.add_argument('-n', '--negative', type=str, nargs='*', help='negative words')
+
+args = parser.parse_args()
+positive = args.positive
+negative = args.negative
 
 model = word2vec.Word2Vec.load("model/jawiki.model")
 
-r = model.most_similar(positive='Linux')
-print(r)
-
-r = model.most_similar(positive='Mac')
-print(r)
-
-r = model.most_similar(positive='ラーメン')
-print(r)
-
-r = model.most_similar(positive=['甘い', 'カレー'])
-print(r)
-
-r = model.most_similar(positive=['王様', '女性'], negative=['男性'])
-print(r)
+result = model.most_similar(positive=positive, negative=negative)
+print('positive words:', positive)
+print('negative words:', negative)
+print('result')
+for r in result:
+    print(r)

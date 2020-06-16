@@ -60,4 +60,5 @@ mecab -b 100000 -O wakati all_jawiki-latest-pages-articles.txt -o jawiki_wakachi
 python train.py
 ```
 
-10. You can predict and fetch similar words by `python predict.py`.
+10.  You can predict and fetch similar words with commands like `python predict.py -p ラーメン 甘い -n 辛い`.
+If the word does not exist in vocabulary, the program returns KeyError.
