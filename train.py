@@ -6,7 +6,8 @@ import logging
 
 from gensim.models import word2vec
 
-logging.basicConfig(level=logging.INFO, filename='log/train.log')
+formatter = '%(levelname)s : %(asctime)s : %(message)s'
+logging.basicConfig(level=logging.INFO, filename='log/train.log', format=formatter)
 logger = logging.getLogger(__name__)
 
 
