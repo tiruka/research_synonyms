@@ -29,6 +29,7 @@ def pre_process():
 def create_model():
     logger.info('Training started')
     data = word2vec.Text8Corpus('data/jawiki_wakachi.txt')
+    # data = word2vec.LineSentence('data/jawiki_wakachi.txt')
     model = word2vec.Word2Vec(data, sg=1, size=100, min_count=1, window=5)
     model.save('model/jawiki.model')
     logger.info('Training ended')
