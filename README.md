@@ -8,7 +8,7 @@ Creating corpas based on Wikipedia Data ans utlizing Word2Vec to predict new syn
 
 1. Download Wikipedia data from `https://dumps.wikimedia.org`. If you will use Japanese and the latest one, you can use `donwloader.py` and store it in `data` the directory. The size is over 2GB.
 2. Insall ruby and execute `gem install wp2txt` in order to convert wikipedia data into text data. If your computer is mac, you can skip this step and make it sure it is installed by `ruby -v` to see the installed ruby version. If necesssary, please add `sudo` to deal with permission errors.
-3. Donwload Mecab from `https://drive.google.com/uc?export=download&id=0B4y35FiV1wh7cENtOXlicTFaRUE` and IPA dictionary from `https://drive.google.com/uc?export=download&id=0B4y35FiV1wh7MWVlSDBCSXZMTXM`. If you can donwload it in any ways (cURL, wget, using browser) and put it on `mecab` directory of this project.
+3. Donwload Mecab from `https://drive.google.com/uc?export=download&id=0B4y35FiV1wh7cENtOXlicTFaRUE` and IPA dictionary from `https://drive.google.com/uc?export=download&id=0B4y35FiV1wh7MWVlSDBCSXZMTXM`. If you can donwload it in any ways (cURL, wget, using browser) and put it on `mecab` directory of this project. Those are linked from `https://taku910.github.io/mecab/`.
 4. Build and install mecab as the below. If you already installed it using other tools such as brew, you can skip the step of insalling mecab, but should execute commands for ipa dictionary.
 
 ```.sh
@@ -32,7 +32,7 @@ sudo make install
 ```.sh
 git clone --depth 1 https://github.com/neologd/mecab-ipadic-neologd.git
 ./mecab-ipadic-neologd/bin/install-mecab-ipadic-neologd -n
-# Please enter yes for [install-mecab-ipadic-NEologd] : Do you want to install mecab-ipadic-NEologd? Type yes or no, 
+# Please enter yes for [install-mecab-ipadic-NEologd] : Do you want to install mecab-ipadic-NEologd? Type yes or no
 ```
 
 6. Unarchive wikipedia data like the below with `bunzip2` (taking you a long time).
